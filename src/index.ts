@@ -1,15 +1,13 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
-import helmet from "helmet";
 import { Redis } from "@upstash/redis";
 
 const app = express();
 
 // middlewares
-app.use(helmet());
+app.use(cors({ origin: process.env.FRONT_URL }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors({ origin: process.env.FRONT_URL }));
 
 const redis = new Redis({
   url: process.env.UPSTASH_REDIS_REST_URL || "",
