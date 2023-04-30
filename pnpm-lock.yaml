@@ -10,9 +10,6 @@ dependencies:
   express:
     specifier: ^4.18.2
     version: 4.18.2
-  helmet:
-    specifier: ^6.1.5
-    version: 6.1.5
 
 devDependencies:
   '@types/cors':
@@ -307,11 +304,6 @@ packages:
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: 1.1.1
-    dev: false
-
-  /helmet@6.1.5:
-    resolution: {integrity: sha512-UgAvdoG0BhF9vcCh/j0bWtElo2ZHHk6OzC98NLCM6zK03DEVSM0vUAtT7iR+oTo2Mi6sGelAH3tL6B/uUWxV4g==}
-    engines: {node: '>=14.0.0'}
     dev: false
 
   /http-errors@2.0.0:
