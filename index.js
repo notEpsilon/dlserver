@@ -1,6 +1,6 @@
-import express from "express";
-import cors from "cors";
-import { Redis } from "@upstash/redis";
+const express = require("express");
+const cors = require("cors");
+const { Redis } = require("@upstash/redis");
 
 const app = express();
 
