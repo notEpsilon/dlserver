@@ -2,9 +2,9 @@
   "name": "dlserver",
   "version": "1.0.0",
   "description": "",
+  "main": "./dist/index.js",
   "scripts": {
-    "build": "npx tsc",
-    "start": "node ./dist/index.js"
+    "buildistd": "npx tsc"
   },
   "keywords": [],
   "author": "Ibrahim Amin",
