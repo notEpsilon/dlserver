@@ -18,7 +18,7 @@ app.get("/api/v1/problems/:owner", async (req, res) => {
   const { owner } = req.params;
   try {
     const data = await redis.get(owner);
-    return res.status(200).json({ data, err: null });
+    return res.status(200).json({ data: data === "" ? "[]" : data, err: null });
   } catch (err) {
     console.error(err);
     res.status(500).json({ data: null, err });
