@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import cors from "cors";
 import { Redis } from "@upstash/redis";
 
@@ -14,8 +14,8 @@ const redis = new Redis({
   token: process.env.UPSTASH_REDIS_REST_TOKEN || "",
 });
 
-app.get("/api/v1/problems/:owner", async (req: Request, res: Response) => {
-  const { owner } = req.params as { owner: string };
+app.get("/api/v1/problems/:owner", async (req, res) => {
+  const { owner } = req.params;
   try {
     const data = await redis.get(owner);
     return res.status(200).json({ data, err: null });
@@ -25,9 +25,9 @@ app.get("/api/v1/problems/:owner", async (req: Request, res: Response) => {
   }
 });
 
-app.post("/api/v1/problems/:owner", async (req: Request, res: Response) => {
-  const { owner } = req.params as { owner: string };
-  const { problems } = req.body as { problems: string };
+app.post("/api/v1/problems/:owner", async (req, res) => {
+  const { owner } = req.params;
+  const { problems } = req.body;
   try {
     await redis.set(owner, problems);
     return res.status(200).json({ data: "<OK>", err: null });
