@@ -5,6 +5,7 @@ import { Redis } from "@upstash/redis";
 
 const app = express();
 
+// middlewares
 app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
