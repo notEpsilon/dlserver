@@ -38,3 +38,6 @@ app.post("/api/v1/problems/:owner", async (req: Request, res: Response) => {
     res.status(500).json({ data: null, err });
   }
 });
+
+const PORT = process.env.PORT || 80;
+app.listen(PORT, () => console.log("listening..."));
