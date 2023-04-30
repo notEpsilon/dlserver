@@ -9,7 +9,7 @@ const app = express();
 app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors({ origin: process.env.FRONT_URL }));
+app.use(cors({ origin: "*" }));
 
 const redis = new Redis({
   url: process.env.UPSTASH_REDIS_REST_URL || "",
